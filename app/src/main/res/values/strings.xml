@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ScanX</string>
+    <string name="open_camera">open camera</string>
+    <string name="take_picture">Take Picture</string>
+    <string name="click_on_a_word_to_see_top_tweets">Click on a word to see Top Tweets</string>
+    <string name="take_a_picture_to_continue">Take a picture to continue</string>
+    <string name="no_text_detected">No text detected</string>
 </resources>
