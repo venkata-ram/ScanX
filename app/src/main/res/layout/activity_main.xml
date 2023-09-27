@@ -1,18 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <TextView
+        android:id="@+id/instructions_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentTop="true"
+        android:text="@string/take_a_picture_to_continue"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/_16sdp"
+        android:textColor="@android:color/holo_blue_dark"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/instructions_tv"
+        android:scrollbars="vertical"
+        android:layout_above="@id/camera_image_view">
+        <TextView
+            android:id="@+id/text_from_image_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_16sdp"
+            android:lineSpacingExtra="@dimen/_6sdp"
+            android:textSize="@dimen/_15ssp" />
+    </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/camera_image_view"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_above="@id/take_picture_tv"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitXY"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:contentDescription="@string/open_camera"
+        android:src="@drawable/open_camera_icon"
+        />
+    <TextView
+        android:id="@+id/take_picture_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/take_picture"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/_16sdp"
+        android:textSize="@dimen/_20ssp"/>
+</RelativeLayout>
